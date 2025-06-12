@@ -72,7 +72,7 @@ body {
   font-family: "Montserrat";
   letter-spacing: 2px;
   text-align: left;
-  margin-bottom: 40px; /* aumenta o espaço abaixo do título */  
+  margin-bottom: 40px; 
   margin-top: 80px; 
 }
 
@@ -121,14 +121,13 @@ body {
   background-color: #2E0854;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
 
   .nav-links {
-    display: none !important; /* força esconder no mobile */
+    display: none !important; 
     flex-direction: column;
     position: absolute;
     top: 80px;
@@ -139,7 +138,7 @@ body {
   }
   
   .nav-links.active {
-    display: flex !important; /* força mostrar ao ativar */
+    display: flex !important; 
   }
   
   .nav-links li {
