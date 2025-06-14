@@ -164,6 +164,60 @@ body {
   margin-top: 20px;
 }
 
+\\depoimentos\\
+
+.depoimentos {
+  color: #FFFFFF;
+  padding: 60px 20px;
+  font-family: sans-serif;
+  justify-content: space-around;
+}
+
+.depoimentotitulo {
+  justify-content: center;
+  color:#FFFFFF
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.depoimento-container {
+  justify-content: space-around;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.depoimento-card {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aspas {
+  font-size: 150px;
+  color: #4b0082;
+  margin-bottom: 10px;
+}
+
+.cargo {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.foto-usuario {
+  width: 240px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* Rodapé */
 footer{
   display: flex;
