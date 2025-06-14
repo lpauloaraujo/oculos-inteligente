@@ -164,58 +164,58 @@ body {
   margin-top: 20px;
 }
 
-/* Estilo para a seção de benefícios */
-section#beneficios {
-  display: flex;
+/* \\depoimentos\\ */
+
+.depoimentos {
+  color: #FFFFFF;
+  padding: 60px 20px;
+  font-family: sans-serif;
+  justify-content: space-around;
+}
+
+.depoimentotitulo {
   justify-content: center;
-  align-items: center;  
-  background-color: #000000;
-  padding: 20px 20px 20px 0px;
-  position: relative;
-  height: 100vh;
+  color:#FFFFFF;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-section#beneficios div{
-  display: block;
-  background-color: #000000;
-  padding: 40px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-section#beneficios h2 {
-  font-size: 36px;
-  color: #FFFFFF;
-  font-weight: 700;
-  margin: 20px 0px 40px 100px;
-  font-family: "Montserrat";
-  text-align: left;
-}
-
-section#beneficios div#lista-beneficios {
+.depoimento-container {
+  justify-content: space-around;
   display: flex;
-  flex-wrap: wrap; 
-  list-style: none;
-  padding: 0;
-  text-align: left;
   gap: 40px;
-}
-
-section#beneficios div#lista-beneficios svg {
-  margin: 0px 20px 20px 0px;
-  vertical-align: middle;
-  margin-top: 10px;
-}
-
-section#beneficios div#lista-beneficios li {
-  display: flex;
   align-items: center;
-  font-size: 18px;
-  color: #FFFFFF;
-  margin-bottom: 20px;
+  flex-wrap: wrap; 
+}
+
+.depoimento-card {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
   max-width: 400px;
-  font-family: "Montserrat";
-  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aspas {
+  font-size: 150px;
+  color: #4b0082;
+  margin-bottom: 10px;
+}
+
+.cargo {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.foto-usuario {
+  width: 240px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 /* Rodapé */
@@ -296,16 +296,23 @@ footer div img{
 
 }
 
-@media (max-width: 1057px) {
-  section#beneficios {
+/* Estilo para a seção de benefícios */
+
+section#beneficios {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;  
   background-color: #000000;
-  padding: 20px 20px 20px 0px;
+  padding: 40px;
   position: relative;
   height: 100vh;
+}
+
+section#beneficios div{
+  display: block;
+  background-color: #000000;
+  padding: 40px;
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -313,25 +320,14 @@ section#beneficios h2 {
   font-size: 36px;
   color: #FFFFFF;
   font-weight: 700;
-  margin: 40px 0px 80px 80px;
+  margin: 20px 0px 40px 100px;
   font-family: "Montserrat";
   text-align: left;
-}
-
-section#container-beneficios {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start; 
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 section#beneficios div#lista-beneficios {
   display: flex;
   flex-wrap: wrap; 
-  transition: opacity 0.2s ease;
-  opacity: 1;
   list-style: none;
   padding: 0;
   text-align: left;
@@ -348,13 +344,10 @@ section#beneficios div#lista-beneficios li {
   display: flex;
   align-items: center;
   font-size: 18px;
-  font-weight: bold;
   color: #FFFFFF;
   margin-bottom: 20px;
   max-width: 400px;
   font-family: "Montserrat";
   line-height: 1.6;
-
-}
 
 }

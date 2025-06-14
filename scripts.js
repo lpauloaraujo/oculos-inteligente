@@ -69,4 +69,26 @@ const primeirosBeneficios = `<ul>
       </ul>`;
     const tempoIntervalo = 4000; // Tempo em milissegundos para alternar entre as partes do carrossel
 
+const depoimentos = document.querySelectorAll('.depoimento-container');
+const primeiroDepoimento= ` <div class="depoimento-card">
+      <div class="aspas">❝</div>
+      <p><em>Usei o VisionOne em uma apresentação e foi surreal. Parece mágica!</em></p>
+      <p><em>Lucas</em></p>
+      <span class="cargo">Designer de produto</span>
+    </div>
+    <img src="images/unsplash_Lgitb85y7-A.svg" alt="Foto do usuário" class="foto-usuario" /> `; 
+const segundoDepoimento = `<div class="depoimento2">
+         <h0 class="aspas-do-depoimento"> "</h0>
+        <img class="imagem-depoimento2" src="images/unsplash_eqXNp1toYc0.svg" alt="imagem depoimento2">
+        <h0 class="aspas do depoimento"> "</h0>
+        <p class=depoimento2-fala>"Trabalho com engenharia e ter dados visíveis no campo mudou meu jogo."</p>
+        <p class="depoimento2-nome"> <span> Carla </span> </p>
+        <p class="depoimento2-profissao"> Engenheira Civil </p>
+      </div>`
+
+let tamanhoTela =       
+
+
 new Carrossel(listaBeneficios, primeirosBeneficios, outrosBeneficios, tempoIntervalo);
+
+new Carrossel(depoimentos, primeiroDepoimento, segundoDepoimento, tempoIntervalo);
