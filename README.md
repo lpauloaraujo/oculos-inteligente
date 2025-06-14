@@ -16,8 +16,8 @@ O projeto consiste no desenvolvimento de uma Landing Page para o **VisionOne**, 
 
   ## Membros do grupo
 
-- [Fernanda Antunes](https://github.com/fernandadev-07) - Design e Desenvolvimento da seção "Inécio" e pelo cabeçalho da landing page. 
-- [Heloisa Goncalves](https://github.com/HeloisaGS) - Design e Desenvolvimento da seção "Sobre" e pelo rodapé da landing page.
+- [Fernanda Antunes](https://github.com/fernandadev-07) - Design e Desenvolvimento da seção "Início" e cabeçalho da landing page. 
+- [Heloisa Goncalves](https://github.com/HeloisaGS) - Design e Desenvolvimento da seção "Sobre" e rodapé da landing page.
 - [Lucas Lira](https://github.com/LucasLira42) - Scrum master e Desenvolvimento da seção depoimentos
 - [Lucas Paulo](https://github.com/lpauloaraujo) - Design e Desenvolvimento da seção "Benefícios"
 - [Kelven Alves](https://github.com/KelvenAlves) - Desenvolvimento da seção "Formulário"
