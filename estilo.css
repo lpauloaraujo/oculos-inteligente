@@ -272,21 +272,18 @@ footer div img{
     max-width: 300px;
   }
 
+}
+
+@media (max-width: 1052px) {
   section#beneficios {
   display: flex;
-  justify-content: center;
-  align-items: center;  
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #000000;
   padding: 40px;
   position: relative;
   height: 100vh;
-}
-
-section#beneficios div{
-  display: block;
-  background-color: #000000;
-  padding: 40px;
-  text-align: center;
   box-sizing: border-box;
 }
 
@@ -294,9 +291,18 @@ section#beneficios h2 {
   font-size: 36px;
   color: #FFFFFF;
   font-weight: 700;
-  margin: 20px 0px 40px 100px;
+  margin: 20px 0px 40px 70px;
   font-family: "Montserrat";
   text-align: left;
+}
+
+section#container-beneficios {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 section#beneficios div#lista-beneficios {

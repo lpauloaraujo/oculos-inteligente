@@ -4,13 +4,13 @@ function toggleMenu() {
   }
 
 class Carrossel {
-  constructor(elemento, primeira, segunda) {
+  constructor(elemento, primeira, segunda, tempo) {
       this.elemento = elemento;
       this.primeiraParte = primeira;
       this.segundaParte = segunda;
       this.mostrandoPrimeira = true;
       this.intervaloCarrossel = null;
-
+      this.tempoIntervalo = tempo;
       this.iniciarCarrossel = this.iniciarCarrossel.bind(this);
       window.addEventListener('resize', this.iniciarCarrossel);
       this.iniciarCarrossel();
@@ -26,13 +26,14 @@ class Carrossel {
     }
 
   iniciarCarrossel() {
-      if (window.innerWidth < 768) {
+    console.log(window.innerWidth);
+      if (window.innerWidth < 1052) {
           this.atualizarCarrossel(this.primeiraParte);
           if (!this.intervaloCarrossel) {
               this.intervaloCarrossel = setInterval(() => {
                   this.mostrandoPrimeira = !this.mostrandoPrimeira;
                   this.atualizarCarrossel(this.mostrandoPrimeira ? this.primeiraParte : this.segundaParte);
-              }, 4000);
+              }, this.tempoIntervalo);
           }
       } else {
           clearInterval(this.intervaloCarrossel);
@@ -66,5 +67,6 @@ const primeirosBeneficios = `<ul>
         <path d="M10.3542 17.3334C8.89582 17.3334 7.58506 16.8647 6.42186 15.9272C5.25867 14.9897 4.52082 13.7917 4.20832 12.3334L2.69791 5.35425L0.40624 5.5105L0.0416565 1.34383C2.74999 1.10078 5.0677 0.927165 6.99478 0.822998C8.92186 0.718831 10.6493 0.666748 12.1771 0.666748C14.434 0.666748 16.2569 0.770915 17.6458 0.979248C19.0347 1.18758 20.2847 1.55216 21.3958 2.073C21.8819 2.31605 22.342 2.48966 22.776 2.59383C23.2101 2.698 23.618 2.75008 24 2.75008C24.3819 2.75008 24.7552 2.698 25.1198 2.59383C25.4844 2.48966 25.9097 2.33341 26.3958 2.12508C27.5417 1.60425 28.8611 1.23098 30.3542 1.00529C31.8472 0.779595 33.8264 0.666748 36.2917 0.666748C37.8889 0.666748 39.6597 0.718831 41.6042 0.822998C43.5486 0.927165 45.6667 1.08341 47.9583 1.29175L47.5937 5.40633L45.3542 5.25008L43.7917 12.3855C43.4792 13.8438 42.75 15.0331 41.6042 15.9532C40.4583 16.8733 39.1562 17.3334 37.6979 17.3334H33.0625C31.6042 17.3334 30.3194 16.8907 29.2083 16.0053C28.0972 15.1199 27.368 13.9827 27.0208 12.5938L25.6146 7.02091H22.4375L21.0312 12.5938C20.6493 14.0174 19.9028 15.1633 18.7917 16.0313C17.6805 16.8994 16.4132 17.3334 14.9896 17.3334H10.3542ZM8.27082 11.5001C8.37499 11.9862 8.61804 12.3855 8.99999 12.698C9.38193 13.0105 9.81596 13.1667 10.3021 13.1667H14.9375C15.4236 13.1667 15.8576 13.0192 16.2396 12.724C16.6215 12.4289 16.8646 12.0556 16.9687 11.6042L18.5833 5.30216C17.6458 5.12855 16.5868 5.01571 15.4062 4.96362C14.2257 4.91154 13.1493 4.8855 12.1771 4.8855C11.3785 4.8855 10.5191 4.89418 9.59895 4.91154C8.67881 4.9289 7.81943 4.9723 7.02082 5.04175L8.27082 11.5001ZM31.0312 11.6042C31.1354 12.0556 31.3785 12.4289 31.7604 12.724C32.1423 13.0192 32.5764 13.1667 33.0625 13.1667H37.6979C38.184 13.1667 38.618 13.0105 39 12.698C39.3819 12.3855 39.625 11.9862 39.7292 11.5001L41.0833 4.98966C40.3889 4.95494 39.5903 4.9289 38.6875 4.91154C37.7847 4.89418 36.9861 4.8855 36.2917 4.8855C35.25 4.8855 34.0955 4.91154 32.8281 4.96362C31.5608 5.01571 30.4236 5.12855 29.4167 5.30216L31.0312 11.6042Z" fill="#C59300"/>
         </svg>Design minimalista e resistente</li>
       </ul>`;
+    const tempoIntervalo = 4000; // Tempo em milissegundos para alternar entre as partes do carrossel
 
-new Carrossel(listaBeneficios, primeirosBeneficios, outrosBeneficios);
+new Carrossel(listaBeneficios, primeirosBeneficios, outrosBeneficios, tempoIntervalo);
