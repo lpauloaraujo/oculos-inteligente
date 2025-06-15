@@ -1,0 +1,7 @@
+<!-- filepath: c:\Users\Kélven\oculos-inteligente\Formulário\images\icon-camera.svg -->
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6" y="14" width="36" height="24" rx="4" fill="#D5B8FF" stroke="#2E0854" stroke-width="2"/>
+  <circle cx="24" cy="26" r="7" fill="#2E0854"/>
+  <circle cx="24" cy="26" r="4" fill="#D5B8FF"/>
+  <rect x="16" y="8" width="16" height="6" rx="2" fill="#2E0854"/>
+</svg>

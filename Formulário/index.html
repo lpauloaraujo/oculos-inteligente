@@ -1,44 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Notificação</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionOne</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <img src="images/Union.png" alt="Logo VisionOne" class="logo">
+      <nav class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#formulario">Formulário</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="container">
-        <div class="form-container">
-            <h2>Formulário</h2>
-            <form id="notification-form">
-                <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" placeholder="Digite seu nome..." required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail..." required>
-                </div>
-                <div class="form-group">
-                    <label for="area">Área de atuação:</label>
-                    <input type="text" id="area" name="area" placeholder="Digite sua area de atuação..." required>
-                </div>
-                <button type="submit" class="submit-button">Quero ser notificado</button>
-            </form>
+  <main>
+    <section id="inicio">
+      <div class="section-container">
+        <div class="hero-content">
+          <h1>Veja o futuro de um novo ângulo</h1>
+          <p>Descubra o VisionOne, o óculos inteligente que conecta você ao mundo com realidade aumentada e comando por voz.</p>
+          <p>Garanta o seu na pré-venda exclusiva!</p>
+          <a href="#formulario" class="cta-button">Quero ser notificado</a>
         </div>
+        <div class="hero-image">
+          <img src="images/oculos.png" alt="Óculos Inteligente VisionOne">
+        </div>
+      </div>
+    </section>
 
-        <div class="stats-container">
-            <div class="stat-badge">500 clientes</div>
-            <div class="stat-badge">95% de aprovação</div>
+    <section id="sobre">
+      <div class="section-container">
+        <div class="sobre-image">
+           <img src="images/5 BEST SMART GLASSES 2024 1.png" alt="Visão através dos óculos">
+        </div>
+        <div class="sobre-content">
+            <h2>Sobre o Produto</h2>
+            <p>Projetado para profissionais e criadores, o <strong>VisionOne</strong> combina estilo e tecnologia. Controle sua agenda, veja informações em tempo real e viva experiências imersivas — tudo ao alcance dos seus olhos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="section-container">
+        <h2>Benefícios</h2>
+        <div class="beneficios-grid">
+          <div class="beneficio-item">
+            <img src="images/icon-camera.svg" alt="Ícone de Câmera">
+            <p>Câmera integrada com captura por comando de voz</p>
+          </div>
+          <div class="beneficio-item">
+            <img src="images/icon-bateria.svg" alt="Ícone de Bateria">
+            <p>Bateria com duração de até 20h</p>
+          </div>
+          <div class="beneficio-item">
+            <img src="images/icon-ia.svg" alt="Ícone de IA">
+            <p>Assistente de IA integrado</p>
+          </div>
+          <div class="beneficio-item">
+            <img src="images/icon-conexao.svg" alt="Ícone de Conexão">
+            <p>Conexão 5G e Wi-Fi</p>
+          </div>
+          <div class="beneficio-item">
+            <img src="images/icon-apps.svg" alt="Ícone de Apps">
+            <p>Sincronização com seus apps favoritos</p>
+          </div>
+          <div class="beneficio-item">
+            <img src="images/icon-design.svg" alt="Ícone de Design">
+            <p>Design minimalista e resistente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos">
+      <div class="section-container depoimentos-container">
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="depoimento-card">
+              <span class="quote">“</span>
+              <p>Usei o VisionOne em uma apresentação e foi surreal. Parece mágica!</p>
+              <span class="depoimento-autor">Lucas - Designer de produto</span>
+            </div>
+            <div class="depoimento-imagem">
+              <img src="images/unsplash_Lgitb85y7-A.svg" alt="Foto do autor do depoimento">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="depoimento-card">
+              <span class="quote">“</span>
+              <p>O VisionOne mudou minha rotina de trabalho. Recomendo para todos!</p>
+              <span class="depoimento-autor">Marina - Engenheira</span>
+            </div>
+            <div class="depoimento-imagem">
+              <img src="images/unsplash_eqXNp1toYc0.svg" alt="Foto do autor do depoimento">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="depoimento-card">
+              <span class="quote">“</span>
+              <p>Simplesmente incrível! A integração com apps é perfeita.</p>
+              <span class="depoimento-autor">Carlos - Desenvolvedor</span>
+            </div>
+            <div class="depoimento-imagem">
+              <img src="images/oculos.png" alt="Foto do autor do depoimento">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formulario">
+        <div class="section-container formulario-container">
+            <div class="form-wrapper">
+                <h2>Formulário</h2>
+                <form id="notification-form">
+                    <input id="name" type="text" placeholder="Digite seu nome..." required>
+                    <input id="email" type="email" placeholder="Digite seu E-mail..." required>
+                    <input type="text" placeholder="Digite sua área de atuação" required>
+                    <button type="submit" class="cta-button">Quero ser notificado</button>
+                </form>
+            </div>
+            <div class="social-proof-wrapper">
+                <div class="proof-card">
+                    <p><strong>500 clientes</strong></p>
+                </div>
+                <div class="proof-card">
+                    <p><strong>95% de aprovação</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <img src="images/Union.png" alt="Logo VisionOne" class="logo">
+        <div class="social-links">
+            <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/Instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="images/Youtube.png" alt="Youtube"></a>
+            <a href="#"><img src="images/twitterX.png" alt="Twitter"></a>
+            <a href="#"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    ...
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<!-- filepath: c:\Users\Kélven\oculos-inteligente\Formulário\images\icon-conexao.svg -->
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="24" cy="24" r="18" fill="#D5B8FF" stroke="#2E0854" stroke-width="2"/>
+  <path d="M16 28a8 8 0 0 1 16 0" stroke="#2E0854" stroke-width="2" fill="none"/>
+  <path d="M20 24a4 4 0 0 1 8 0" stroke="#2E0854" stroke-width="2" fill="none"/>
+  <circle cx="24" cy="32" r="2" fill="#2E0854"/>
+</svg>

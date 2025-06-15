@@ -23,3 +23,26 @@ form.addEventListener('submit', function(event) {
     // 5. Limpa o formulário após a submissão bem-sucedida
     form.reset();
 });
+
+// ...existing code...
+
+// Carrossel de depoimentos automático
+const carouselItems = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+function showCarouselItem(index) {
+  carouselItems.forEach((item, i) => {
+    item.classList.toggle('active', i === index);
+  });
+}
+
+function nextCarouselItem() {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  showCarouselItem(currentIndex);
+}
+
+// Inicia o carrossel automático
+setInterval(nextCarouselItem, 4000); // Troca a cada 4 segundos
+
+// Exibe o primeiro item ao carregar
+showCarouselItem(currentIndex);
