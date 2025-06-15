@@ -181,7 +181,9 @@ body {
   margin-bottom: 30px;
 }
 
-.depoimento-container {
+div#depoimento-container {
+  transition: opacity 0.3s ease;
+  opacity: 1;
   justify-content: space-around;
   display: flex;
   gap: 40px;
@@ -349,5 +351,68 @@ section#beneficios div#lista-beneficios li {
   max-width: 400px;
   font-family: "Montserrat";
   line-height: 1.6;
+
+}
+
+/* Estilo para a seção de benefícios (mobile) */
+@media (max-width: 1057px) {
+  section#beneficios {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #000000;
+  padding: 20px 20px 20px 0px;
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+section#beneficios h2 {
+  font-size: 36px;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin: 40px 0px 80px 80px;
+  font-family: "Montserrat";
+  text-align: left;
+}
+
+section#container-beneficios {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section#beneficios div#lista-beneficios {
+  display: flex;
+  flex-wrap: wrap; 
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  gap: 40px;
+}
+
+section#beneficios div#lista-beneficios svg {
+  margin: 0px 20px 20px 0px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+section#beneficios div#lista-beneficios li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  max-width: 400px;
+  font-family: "Montserrat";
+  line-height: 1.6;
+}
 
 }

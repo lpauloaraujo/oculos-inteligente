@@ -3,13 +3,14 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
   }
 
-class Carrossel {
-  constructor(elemento, primeira, segunda, tempo) {
+class CarrosselBeneficios {
+  constructor(elemento, primeira, segunda, tempo, largura) {
       this.elemento = elemento;
       this.primeiraParte = primeira;
       this.segundaParte = segunda;
       this.mostrandoPrimeira = true;
       this.intervaloCarrossel = null;
+      this.largura = largura;
       this.tempoIntervalo = tempo;
       this.iniciarCarrossel = this.iniciarCarrossel.bind(this);
       window.addEventListener('resize', this.iniciarCarrossel);
@@ -22,12 +23,11 @@ class Carrossel {
       setTimeout(() => {
           this.elemento.innerHTML = conteudo;
           this.elemento.style.opacity = 1;
-      }, 200); 
+      }, 300); 
     }
 
   iniciarCarrossel() {
-    console.log(window.innerWidth);
-      if (window.innerWidth < 1057) {
+      if (window.innerWidth < this.largura) {
           this.atualizarCarrossel(this.primeiraParte);
           if (!this.intervaloCarrossel) {
               this.intervaloCarrossel = setInterval(() => {
@@ -43,6 +43,54 @@ class Carrossel {
   }
 }
 
+class CarrosselDepoimentos {
+  constructor(elemento, primeiraM, segundaM, primeiraD, segundaD, tempo, largura) {
+      this.elemento = elemento;
+      this.primeiraParteM = primeiraM;
+      this.segundaParteM = segundaM;
+      this.primeiraParteD = primeiraD;
+      this.segundaParteD = segundaD;
+      this.mostrandoPrimeira = true;
+      this.intervaloCarrossel = null;
+      this.largura = largura;
+      this.tempoIntervalo = tempo;
+      this.iniciarCarrossel = this.iniciarCarrossel.bind(this);
+      window.addEventListener('resize', this.iniciarCarrossel);
+      this.iniciarCarrossel();
+  }
+
+  atualizarCarrossel(conteudo) {
+      this.elemento.style.opacity = 0;
+
+      setTimeout(() => {
+          this.elemento.innerHTML = conteudo;
+          this.elemento.style.opacity = 1;
+      }, 300); 
+    }
+
+  iniciarCarrossel() {
+    clearInterval(this.intervaloCarrossel);
+    this.intervaloCarrossel = null;
+
+    if (window.innerWidth < this.largura) {
+        this.atualizarCarrossel(this.mostrandoPrimeira ? this.primeiraParteM : this.segundaParteM);
+        this.mostrandoPrimeira = !this.mostrandoPrimeira;
+        this.intervaloCarrossel = setInterval(() => {
+            this.atualizarCarrossel(this.mostrandoPrimeira ? this.primeiraParteM : this.segundaParteM);
+            this.mostrandoPrimeira = !this.mostrandoPrimeira;
+        }, this.tempoIntervalo);
+    } else {
+        this.atualizarCarrossel(this.mostrandoPrimeira ? this.primeiraParteD : this.segundaParteD);
+        this.mostrandoPrimeira = !this.mostrandoPrimeira;
+        this.intervaloCarrossel = setInterval(() => {
+            this.atualizarCarrossel(this.mostrandoPrimeira ? this.primeiraParteD : this.segundaParteD);
+            this.mostrandoPrimeira = !this.mostrandoPrimeira;
+        }, this.tempoIntervalo);
+    }
+}
+
+}
+
 // variáveis referentes ao controle do carrossel da sessão de benefícios
 const listaBeneficios = document.getElementById('lista-beneficios');
 const primeirosBeneficios = `<ul>
@@ -56,7 +104,7 @@ const primeirosBeneficios = `<ul>
         <path d="M0.333313 33.6666V29.4999H6.06248L5.22915 28.7708C3.42359 27.1735 2.15623 25.3506 1.42706 23.302C0.697896 21.2534 0.333313 19.1874 0.333313 17.1041C0.333313 13.2499 1.48783 9.8211 3.79685 6.81763C6.10588 3.81415 9.11804 1.82631 12.8333 0.854085V5.22908C10.3333 6.13186 8.31942 7.66832 6.79165 9.83846C5.26387 12.0086 4.49998 14.4305 4.49998 17.1041C4.49998 18.6666 4.79512 20.1857 5.3854 21.6614C5.97567 23.1371 6.89581 24.4999 8.14581 25.7499L8.66665 26.2708V21.1666H12.8333V33.6666H0.333313ZM21.1666 33.1458V28.7708C23.6666 27.868 25.6805 26.3315 27.2083 24.1614C28.7361 21.9912 29.5 19.5694 29.5 16.8958C29.5 15.3333 29.2048 13.8142 28.6146 12.3385C28.0243 10.8628 27.1041 9.49992 25.8541 8.24992L25.3333 7.72908V12.8333H21.1666V0.333252H33.6666V4.49992H27.9375L28.7708 5.22908C30.4722 6.93047 31.7135 8.77943 32.4948 10.776C33.276 12.7725 33.6666 14.8124 33.6666 16.8958C33.6666 20.7499 32.5121 24.1787 30.2031 27.1822C27.8941 30.1857 24.8819 32.1735 21.1666 33.1458Z" fill="#C59300"/>
         </svg>Sincronização com seus apps favoritos</li>
       </ul>`;
-  const outrosBeneficios = `<ul>
+const outrosBeneficios = `<ul>
         <li><svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.3125 22.8125H17.3542L26.7292 13.4375H20.1146L21.5208 7.1875H20.4792L11.1042 16.5625H17.7187L16.3125 22.8125ZM4.33332 24.8958H33.5V5.10417H4.33332V24.8958ZM4.33332 29.0625C3.18749 29.0625 2.20659 28.6545 1.39061 27.8385C0.574643 27.0226 0.166656 26.0417 0.166656 24.8958V5.10417C0.166656 3.95833 0.574643 2.97743 1.39061 2.16146C2.20659 1.34549 3.18749 0.9375 4.33332 0.9375H33.5C34.6458 0.9375 35.6267 1.34549 36.4427 2.16146C37.2587 2.97743 37.6667 3.95833 37.6667 5.10417V9.79167H38.7083C39.5764 9.79167 40.3142 10.0955 40.9219 10.7031C41.5295 11.3108 41.8333 12.0486 41.8333 12.9167V17.0833C41.8333 17.9861 41.5295 18.7326 40.9219 19.3229C40.3142 19.9132 39.5764 20.2083 38.7083 20.2083H37.6667V24.8958C37.6667 26.0417 37.2587 27.0226 36.4427 27.8385C35.6267 28.6545 34.6458 29.0625 33.5 29.0625H4.33332Z" fill="#C59300"/>
         </svg>Bateria com duração de até 20h</li>
@@ -67,28 +115,40 @@ const primeirosBeneficios = `<ul>
         <path d="M10.3542 17.3334C8.89582 17.3334 7.58506 16.8647 6.42186 15.9272C5.25867 14.9897 4.52082 13.7917 4.20832 12.3334L2.69791 5.35425L0.40624 5.5105L0.0416565 1.34383C2.74999 1.10078 5.0677 0.927165 6.99478 0.822998C8.92186 0.718831 10.6493 0.666748 12.1771 0.666748C14.434 0.666748 16.2569 0.770915 17.6458 0.979248C19.0347 1.18758 20.2847 1.55216 21.3958 2.073C21.8819 2.31605 22.342 2.48966 22.776 2.59383C23.2101 2.698 23.618 2.75008 24 2.75008C24.3819 2.75008 24.7552 2.698 25.1198 2.59383C25.4844 2.48966 25.9097 2.33341 26.3958 2.12508C27.5417 1.60425 28.8611 1.23098 30.3542 1.00529C31.8472 0.779595 33.8264 0.666748 36.2917 0.666748C37.8889 0.666748 39.6597 0.718831 41.6042 0.822998C43.5486 0.927165 45.6667 1.08341 47.9583 1.29175L47.5937 5.40633L45.3542 5.25008L43.7917 12.3855C43.4792 13.8438 42.75 15.0331 41.6042 15.9532C40.4583 16.8733 39.1562 17.3334 37.6979 17.3334H33.0625C31.6042 17.3334 30.3194 16.8907 29.2083 16.0053C28.0972 15.1199 27.368 13.9827 27.0208 12.5938L25.6146 7.02091H22.4375L21.0312 12.5938C20.6493 14.0174 19.9028 15.1633 18.7917 16.0313C17.6805 16.8994 16.4132 17.3334 14.9896 17.3334H10.3542ZM8.27082 11.5001C8.37499 11.9862 8.61804 12.3855 8.99999 12.698C9.38193 13.0105 9.81596 13.1667 10.3021 13.1667H14.9375C15.4236 13.1667 15.8576 13.0192 16.2396 12.724C16.6215 12.4289 16.8646 12.0556 16.9687 11.6042L18.5833 5.30216C17.6458 5.12855 16.5868 5.01571 15.4062 4.96362C14.2257 4.91154 13.1493 4.8855 12.1771 4.8855C11.3785 4.8855 10.5191 4.89418 9.59895 4.91154C8.67881 4.9289 7.81943 4.9723 7.02082 5.04175L8.27082 11.5001ZM31.0312 11.6042C31.1354 12.0556 31.3785 12.4289 31.7604 12.724C32.1423 13.0192 32.5764 13.1667 33.0625 13.1667H37.6979C38.184 13.1667 38.618 13.0105 39 12.698C39.3819 12.3855 39.625 11.9862 39.7292 11.5001L41.0833 4.98966C40.3889 4.95494 39.5903 4.9289 38.6875 4.91154C37.7847 4.89418 36.9861 4.8855 36.2917 4.8855C35.25 4.8855 34.0955 4.91154 32.8281 4.96362C31.5608 5.01571 30.4236 5.12855 29.4167 5.30216L31.0312 11.6042Z" fill="#C59300"/>
         </svg>Design minimalista e resistente</li>
       </ul>`;
-    const tempoIntervalo = 4000; // Tempo em milissegundos para alternar entre as partes do carrossel
+const tempoIntervaloB = 4000;
 
-const depoimentos = document.querySelectorAll('.depoimento-container');
-const primeiroDepoimento= ` <div class="depoimento-card">
+// variáveis referentes ao controle do carrossel da sessão depoimentos (desktop)
+const depoimentos = document.getElementById('depoimento-container')
+const primeiroDepoimentoD = `<div class="depoimento-card">
       <div class="aspas">❝</div>
       <p><em>Usei o VisionOne em uma apresentação e foi surreal. Parece mágica!</em></p>
       <p><em>Lucas</em></p>
       <span class="cargo">Designer de produto</span>
     </div>
     <img src="images/unsplash_Lgitb85y7-A.svg" alt="Foto do usuário" class="foto-usuario" /> `; 
-const segundoDepoimento = `<div class="depoimento2">
-         <h0 class="aspas-do-depoimento"> "</h0>
-        <img class="imagem-depoimento2" src="images/unsplash_eqXNp1toYc0.svg" alt="imagem depoimento2">
-        <h0 class="aspas do depoimento"> "</h0>
-        <p class=depoimento2-fala>"Trabalho com engenharia e ter dados visíveis no campo mudou meu jogo."</p>
-        <p class="depoimento2-nome"> <span> Carla </span> </p>
-        <p class="depoimento2-profissao"> Engenheira Civil </p>
-      </div>`
+const segundoDepoimentoD = `<div class="depoimento-card">
+      <div class="aspas">❝</div>
+      <p><em>Trabalho com engenharia e ter dados visíveis no campo mudou meu jogo.</em></p>
+      <p><em>Carla</em></p>
+      <span class="cargo">Engenheira civil</span>
+    </div>
+    <img src="images/unsplash_eqXNp1toYc0.svg" alt="Foto do usuário" class="foto-usuario" />`
+const tempoIntervaloD = 5000;
 
-let tamanhoTela =       
+// variáveis referentes ao controle do carrossel da sessão de depoimentos (desktop)
+const primeiroDepoimentoM = `<div class="depoimento-card">
+      <div class="aspas">❝</div>
+      <p><em>Usei o VisionOne em uma apresentação e foi surreal. Parece mágica!</em></p>
+      <p><em>Lucas</em></p>
+      <span class="cargo">Designer de produto</span>
+    </div>`
+const segundoDepoimentoM = `<div class="depoimento-card">
+      <div class="aspas">❝</div>
+      <p><em>Trabalho com engenharia e ter dados visíveis no campo mudou meu jogo.</em></p>
+      <p><em>Carla</em></p>
+      <span class="cargo">Engenheira civil</span>
+    </div>`
 
-
-new Carrossel(listaBeneficios, primeirosBeneficios, outrosBeneficios, tempoIntervalo);
-
-new Carrossel(depoimentos, primeiroDepoimento, segundoDepoimento, tempoIntervalo);
+//instanciando os carrosséis
+new CarrosselBeneficios(listaBeneficios, primeirosBeneficios, outrosBeneficios, tempoIntervaloB, 1057);
+new CarrosselDepoimentos(depoimentos, primeiroDepoimentoM, segundoDepoimentoM, primeiroDepoimentoD, segundoDepoimentoD, tempoIntervaloD, 768);
