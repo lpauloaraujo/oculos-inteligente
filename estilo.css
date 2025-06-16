@@ -118,7 +118,9 @@ body {
 }
 
 .botao button:hover {
-  background-color: #2E0854;
+  background-color: transparent;
+  color: #D5B8FF;
+  border: 2px solid #D5B8FF;
 }
 
 #sobre{
@@ -176,7 +178,7 @@ body {
 .depoimentotitulo {
   justify-content: center;
   color:#FFFFFF;
-  font-size: 60px;
+  font-size: 42px;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -214,8 +216,8 @@ div#depoimento-container {
 }
 
 .foto-usuario {
-  width: 240px;
-  height: auto;
+  width: auto;
+  height: 380px;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -407,7 +409,7 @@ section#beneficios div#lista-beneficios li {
 .proof-card {
     background-color: white;
     color: black;
-    padding: 20px 50px;
+    padding: 5px 20px;
     border-radius: 12px;
     text-align: center;
 }
