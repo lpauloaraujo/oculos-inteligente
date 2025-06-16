@@ -256,6 +256,10 @@ footer div img{
     display: block;
   }
 
+  #inicio{
+    height: 100%;
+  }
+
   .nav-links {
     display: none !important; 
     flex-direction: column;
@@ -266,9 +270,14 @@ footer div img{
     width: 100%;
     padding: 20px 0;
   }
-  
+
+
   .nav-links.active {
     display: flex !important; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+
   }
   
   .nav-links li {
